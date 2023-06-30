@@ -52,7 +52,7 @@ class HuffmanCoding:
                 # Ignorar el carácter y continuar con el siguiente
                 pass
         return encoded_string
-
+    
 
     def get_Tree(self):
         """
