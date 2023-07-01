@@ -4,8 +4,8 @@ Proyecto final: FADA algoritmo Huffman
 
 Integrantes y autores:
     2067805 Andres Mauricio Arias Cortes
-     Santiago Marin Lozano
-     Maher Lopez Rodriguez
+    2067705 Santiago Marin Lozano
+    2067784 Maher Lopez Rodriguez
 
 
 Este modulo contiene la clase HuffmanCoding
@@ -66,11 +66,11 @@ class HuffmanCoding:
         """
         return self.table
 
-    def get_Summary(self):
+    def get_Summary(self, cadena=None):
         """
         Metodo que retorna un resumen de la compresion
         """
-        compression_percentage = self.calculate_compression_percentage()
+        compression_percentage = self.calculate_compression_percentage(cadena)
         num_nodes = self.count_nodes(self.tree)
         depth = self.calculate_depth(self.tree)
         summary = {
@@ -79,6 +79,7 @@ class HuffmanCoding:
             "depth": depth
         }
         return summary
+
 
     def build_tree(self, cadena):
         """
@@ -233,3 +234,21 @@ class HuffmanCoding:
         left_depth = self.calculate_depth(node.left)
         right_depth = self.calculate_depth(node.right)
         return 1 + max(left_depth, right_depth)
+    
+    def write_encoded_data_to_file(self, filename, encoded_data):
+        """
+        Método que escribe los datos codificados en un archivo.
+        """
+        with open(filename, "wb") as file:
+            encoded_bytes = bytearray(encoded_data, "utf-8")
+            file.write(encoded_bytes)
+
+    def read_encoded_data_from_file(self, filename):
+        """
+        Método que lee los datos codificados de un archivo.
+        """
+        with open(filename, "rb") as file:
+            encoded_bytes = file.read()
+            encoded_data = list(encoded_bytes)
+        return encoded_data
+

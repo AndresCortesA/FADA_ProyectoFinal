@@ -3,8 +3,8 @@ Proyecto final: FADA algoritmo Huffman
 
 Integrantes y autores:
     2067805 Andres Mauricio Arias Cortes
-     Santiago Marin Lozano
-     Maher Lopez Rodriguez
+    2067705 Santiago Marin Lozano
+    2067784 Maher Lopez Rodriguez
 
 
 Este modulo contiene la clase HuffmanBinaryTree
